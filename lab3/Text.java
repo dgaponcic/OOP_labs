@@ -15,24 +15,31 @@ class Text {
 
     int getNumberVowels() {
         String str = text.toLowerCase();
-        List<Character> vowelsList = Arrays.asList('a', 'e', 'i', 'o', 'u');
         int vowelsCount = 0;
 
         for (int i = 0; i < str.length(); i += 1) {
-            if (vowelsList.contains(str.charAt(i))) {
+            if (isVowel(str.charAt(i))) {
                 vowelsCount += 1;
             }
         }
         return vowelsCount;
     }
 
+    private boolean isVowel(char element) {
+        List<Character> vowelsList = Arrays.asList('a', 'e', 'i', 'o', 'u');
+        return vowelsList.contains(element);
+    }
+
+    private boolean isLetter(char element) {
+        return element >= 'a' && element <= 'z';
+    }
+
     int getNumberConsonants() {
         String str = text.toLowerCase();
-        List<Character> vowelsList = Arrays.asList('a', 'e', 'i', 'o', 'u');
         int consonantsCount = 0;
 
         for (int i = 0; i < str.length(); i += 1) {
-            if (!vowelsList.contains(str.charAt(i)) && str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
+            if (!isVowel(str.charAt(i)) && isLetter((str.charAt(i)))) {
                 consonantsCount += 1;
             }
         }
