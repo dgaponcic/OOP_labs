@@ -57,7 +57,7 @@ class Text {
         return lettersCount;
     }
 
-    void printMostUsed(int number) {
+    private HashMap<String, Integer> getWordFrequency() {
         String[] words = text.toLowerCase().split("[ !?.:,]+");
         HashMap<String, Integer> wordCount = new HashMap<>();
 
@@ -68,6 +68,11 @@ class Text {
                 wordCount.put(word, 1);
             }
         }
+        return wordCount;
+    }
+
+    void printMostUsedWords(int number) {
+        HashMap<String, Integer> wordCount = getWordFrequency();
 
         System.out.println("Most used words: ");
         wordCount.entrySet()

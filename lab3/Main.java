@@ -10,6 +10,6 @@ public class Main {
         System.out.println("Number of letters: " + text1.getNumberLetters());
 
         System.out.println("Longest word: " + text1.getLongestWord());
-        text1.printMostUsed(5);
+        text1.printMostUsedWords(5);
     }
 }
