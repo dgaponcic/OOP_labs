@@ -48,13 +48,13 @@ class Text {
 
     int getNumberLetters() {
         String str = text.toLowerCase();
-        int consonantsCount = 0;
+        int lettersCount = 0;
         for (int i = 0; i < str.length(); i += 1) {
-            if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
-                consonantsCount += 1;
+            if (isLetter(str.charAt(i))) {
+                lettersCount += 1;
             }
         }
-        return consonantsCount;
+        return lettersCount;
     }
 
     void printMostUsed(int number) {
